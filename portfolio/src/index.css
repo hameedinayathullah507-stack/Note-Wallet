@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #050505;
+    --bg-secondary: #0F0F10;
+    --bg-surface: rgba(255, 255, 255, 0.03);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-gold: rgba(232, 184, 74, 0.3);
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.65);
+    --accent: #E8B84A;
+    --accent-glow: rgba(232, 184, 74, 0.25);
+    --accent-hover: #FFD978;
+    
+    --font-syne: 'Syne', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+    --font-outfit: 'Outfit', sans-serif;
+    --font-mono: 'Space Grotesk', monospace;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-outfit);
+    overflow-x: hidden;
+    cursor: default;
+  }
+}
+
+/* Custom Typography Utilities */
+.font-syne {
+  font-family: var(--font-syne);
+}
+
+.font-serif-italic {
+  font-family: var(--font-playfair);
+  font-style: italic;
+}
+
+.font-outfit {
+  font-family: var(--font-outfit);
+}
+
+.font-mono-custom {
+  font-family: var(--font-mono);
+}
+
+/* Luxury Glassmorphism */
+.glass-panel {
+  background: rgba(15, 15, 16, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(232, 184, 74, 0.4);
+  box-shadow: 0 10px 30px rgba(232, 184, 74, 0.15);
+}
+
+/* Gold Text Gradient */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E8B84A 60%, #FFD978 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(232, 184, 74, 0.3);
+}
+
+/* Animated Noise Background Overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(232, 184, 74, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E8B84A;
+}
+
+/* Broken Grid Horizontal Scroll Styling */
+.horizontal-scroll-container {
+  display: flex;
+  will-change: transform;
+}
+
+/* Hide default cursor on desktop when interactive cursor is active */
+@media (min-width: 1024px) {
+  body.has-custom-cursor {
+    cursor: none;
+  }
+
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [role="button"] {
+    cursor: none;
+  }
+}
