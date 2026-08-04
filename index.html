@@ -4,40 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <title>Note Walllet</title>
+
+    <title>Note Wallet</title>
 </head>
-<div class="header">
-    <h1>Note Wallet</h1>
-</div>
-<div class="container">
-    <div class="empty-state">
-        <h1 class="float">CLICK (+) BUTTON TO ADD YOUR FIRST NOTE</h1>
-    </div>
-</div>
-
-<div class="overlay"></div>
-
-<div class="form-container">
-    <form>
-        <h2>Add Note</h2>
-        <input type="text" id="note-title" placeholder="Note Title">
-        <textarea id="note-content" placeholder="Note Content"></textarea>
-        <button id="add-note">Add Note</button>
-        <button id="cancel-note">Cancel</button>
-    </form>
-</div>
-
-<button class="add-btn">+</button>
 
 <body>
 
+    <!-- Header -->
+    <div class="header">
+        <h1> Note Wallet</h1>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+
+        <!-- Notes Section -->
+        <div class="container">
+
+            <div class="empty-state">
+                <h1 class="float">
+                    CLICK (+) BUTTON TO ADD YOUR FIRST NOTE
+                </h1>
+            </div>
+
+            <!-- Notes will be added dynamically here -->
+
+        </div>
+
+        <!-- Todo Widget -->
+        <div class="todo-widget">
+
+            <h3>Today's Tasks</h3>
+
+            <div class="todo-input">
+
+                <input
+                    type="text"
+                    id="input"
+                    placeholder="Add a task...">
+
+                <button id="addtodo">
+                    +
+                </button>
+
+            </div>
+
+            <div id="todo-value">
+
+                <!-- Todo items will appear here -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Add/Edit Note Popup -->
+    <div class="form-container">
+
+        <h2 id="popup-title">Add Note</h2>
+
+        <input
+            type="text"
+            id="note-title" required
+            placeholder="Note Title">
+
+        <textarea
+            id="note-content"
+            placeholder="Note Content"></textarea>
+
+        <button type="button" id="add-note">
+            Add Note
+        </button>
+
+        <button type="button" id="cancel-note">
+            Cancel
+        </button>
+
+    </div>
+
+    <!-- Floating Add Button -->
+    <button class="add-btn">
+        +
+    </button>
+
+    <script src="script.js"></script>
+
 </body>
-<script src="script.js"></script>
 
 </html>
