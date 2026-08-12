@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-ivory: #F8F1E5;
+    --text-dark: #111111;
+    --gold-primary: #B8954A;
+    --gold-light: #E5D2A5;
+    --gold-dark: #7A5B18;
+    --cream-secondary: #EFE3D0;
+  }
+
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    touch-action: manipulation;
+  }
+
+  body {
+    background-color: var(--bg-ivory);
+    color: var(--text-dark);
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    background-image: 
+      radial-gradient(circle at 50% 10%, rgba(184, 149, 74, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 10% 40%, rgba(229, 210, 165, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 90% 70%, rgba(184, 149, 74, 0.08) 0%, transparent 50%);
+    background-attachment: scroll;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Precise Fluid Typography with Controlled Clamps to Prevent Overflow on Mobile */
+.text-clamp-groom {
+  font-size: clamp(1.35rem, 6.2vw, 3.0rem);
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+}
+
+.text-clamp-bride {
+  font-size: clamp(1.15rem, 5.2vw, 2.5rem);
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+}
+
+.text-clamp-heading {
+  font-size: clamp(1.2rem, 5vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+}
+
+.font-serif-heading {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+  direction: rtl;
+}
+
+.font-decorative {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.font-script {
+  font-family: 'Alex Brush', cursive;
+}
+
+/* Rich Gold Gradient Text with High Contrast against Ivory Paper */
+.text-gold-metallic {
+  background: linear-gradient(135deg, #7A5B18 0%, #B8954A 35%, #9E7B2F 70%, #7A5B18 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold Border Frame Styling */
+.gold-border-double {
+  border: 3px double #B8954A;
+  box-shadow: inset 0 0 15px rgba(184, 149, 74, 0.12), 0 6px 20px rgba(184, 149, 74, 0.12);
+}
+
+.gold-border-single {
+  border: 1px solid #B8954A;
+  box-shadow: 0 3px 12px rgba(184, 149, 74, 0.08);
+}
+
+/* Luxury Paper Card */
+.ivory-card {
+  background-color: #FAF6EF;
+  border: 1px solid #D8BE7A;
+  box-shadow: 0 8px 25px rgba(17, 17, 17, 0.04), 0 2px 8px rgba(184, 149, 74, 0.1);
+  position: relative;
+}
+
+/* Safe Area Insets for Mobile Devices */
+.pb-safe {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+}
+
+.pt-safe {
+  padding-top: max(1.5rem, env(safe-area-inset-top));
+}
+
+/* Subtle Shimmer Animation */
+@keyframes goldGlow {
+  0%, 100% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 3px rgba(184, 149, 74, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(229, 210, 165, 0.7));
+  }
+}
+
+.animate-gold-glow {
+  animation: goldGlow 4s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+/* QR Animated Outer Frame Glow */
+@keyframes qrGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(184, 149, 74, 0.3), 0 0 30px rgba(216, 190, 122, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(184, 149, 74, 0.6), 0 0 45px rgba(216, 190, 122, 0.4);
+  }
+}
+
+.animate-qr-glow {
+  animation: qrGlow 3s ease-in-out infinite;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
